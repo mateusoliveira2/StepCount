@@ -12,11 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements SensorEventListener {
+    
     private long steps = 0;
     private TextView tv_steps;
     SensorManager sManager;
     Sensor stepSensor;
     boolean run;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-       /* Sensor sensor = event.sensor;
+        Sensor sensor = event.sensor;
         float[] values = event.values;
         int value = -1;
 
@@ -37,7 +39,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         }
         if (sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
             steps++;
-        }*/
+        }
         tv_steps.setText(String.valueOf(event.values[0]));
     }
 
